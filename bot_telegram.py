@@ -1,8 +1,11 @@
 from create_bot import bot, dp
 from aiogram.utils import executor
+from data_base import sqlite_db
+from handlers import admin_side
 
 
-async def on_startup():
+async def on_startup(_):
+    sqlite_db.sql_start()
     print('Bot Online!')
 
 
